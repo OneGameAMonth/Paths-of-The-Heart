@@ -11,6 +11,12 @@ public class GameLogic : MonoBehaviour {
 		Shuffle(Modules);
         Screen.showCursor = false;
         GameObject.Find("End").transform.position = GameObject.Find("Ella1").transform.position;
+		
+	}
+	
+	void OnMouseDown () {
+    	// Lock the cursor
+    	Screen.lockCursor = true;
 	}
 	
 	// Update is called once per frame

@@ -8,6 +8,7 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject[] Doors;
 	public GameObject[] Modules;
 	public GUIText Log;
+	private bool isDead = false;
 	
 	float DistIni;
 	
@@ -22,6 +23,15 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if((transform.position.y <= -5) && !isDead) 
+		{
+			Application.LoadLevel("MainMenu");
+			
+			//CameraFade.StartAlphaFade(Color.clear, true, 2f, 2f, () => { Application.LoadLevel("MainMenu"); });
+			
+			//isDead = true;
+		}
+		
 		if(!IsKeyOK)
 		{
 			var distAct = Vector3.Distance(transform.position, Key.transform.position);
